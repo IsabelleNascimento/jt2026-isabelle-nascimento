@@ -1,47 +1,85 @@
 # Hackathon Jovens Talentos AI Builder 2026 — Seazone
 
-## 👉 Leia o desafio aqui
+# Seazone - Desafio IA Builder 2026
 
-### **[ABRIR O DESAFIO COMPLETO](https://seazone-tech.github.io/jovens-talentos-2026-hackathon-data/)**
-
-Lá está tudo: a missão, os dados, **o que entregar**, as regras, o prazo e **como vamos avaliar**.
-Leia antes de começar a mexer nos dados.
-
-> Se o link acima não abrir, o mesmo conteúdo está no arquivo [`index.html`](index.html) deste repositório
-> (baixe e abra no navegador).
+Este repositório contém a análise de inteligência de mercado e recomendação de investimento imobiliário para a Seazone no município de Itapema (SC), integrando dados do Airbnb e do VivaReal.
 
 ---
 
-## Primeiro passo
+## 🚀 Como Executar o Projeto
 
-**Faça um _fork_ deste repositório.** É nele que você vai trabalhar e é ele que você entrega.
+### Pré-requisitos
+- Python 3.10+
+- Git
+
+### Passo a Passo
+
+1. Clonar o repositório:
+   ```bash
+   git clone [https://github.com/SEU-USUARIO/jt2026-isabelle-nascimento.git](https://github.com/SEU-USUARIO/jt2026-isabelle-nascimento.git)
+   cd jt2026-isabelle-nascimento
+
+```
+
+2. Instalar as dependências:
+```bash
+pip install -r requirements.txt
+
+```
+
+
+3. Executar o script de análise:
+```bash
+python relatorio_final.py
+
+```
+
+
+
+*Nota: Certifique-se de executar o comando sempre de dentro da pasta raiz do projeto (`jt2026-isabelle-nascimento`) para garantir a localização correta da pasta `data/`.*
 
 ---
 
-## Os dados (`data/`)
+## 📌 Resumo Executivo das Respostas
 
-Snapshot estático do mercado imobiliário de **Itapema (SC)**, com anúncios de Airbnb e de venda (VivaReal).
-É a mesma base para todos os candidatos, para garantir comparação justa.
+| Pergunta | Resposta Sintética |
+| --- | --- |
+| **1. Melhor Perfil de Imóvel?** | Apartamento de 2 quartos, 1 a 2 banheiros, aceita pets, com foco em atingir status/rating > 4.9.
 
-| Arquivo | O que tem | Como conecta |
-|---|---|---|
-| `Details_Itapema.csv` | Cada anúncio de Airbnb: título, reviews, star rating, descrição, host_id, nº de quartos, tipo de imóvel | Base principal dos listings |
-| `Hosts_ids_Itapema.csv` | Dados do anfitrião: nº de reviews, anos como host, superhost, taxa de resposta | Liga com Details pelo `owner_id` |
-| `Mesh_Ids_Data_Itapema.csv` | Latitude/longitude + bairro de cada anúncio | Liga por listing |
-| `Price_AV_Itapema.csv` | Preço por anúncio, por data de estadia e por data de captura | Liga por listing |
-| `VivaReal_Itapema.csv` | Anúncios de venda: preço, condomínio, área, vendedor | Mercado de compra |
+ |
+| **2. Melhor Localização?** | **Centro** (melhor equilíbrio de oferta, liquidez e receita) e **Morretes** (maior resiliência/menor sazonalidade).
 
----
+ |
+| **3. Atributos da Receita?** | Localização, número de quartos, notas altas/Guest Favorite (demanda de ocupação) e política Pet Friendly (+43% em reviews).
 
-## Resumo do que você entrega
+ |
+| **4. Recomendação de Compra?** | **Cenário B (Equilibrado):** Apartamento 2q no Centro/Morretes (Ticket R$ 900k-1.2M, ROI Líquido 10-14%, Payback 8-9 anos).
 
-1. **Este repositório, forkado e público**, com a sua análise, o `README.md` explicando como rodar,
-   a pasta `ai-log/` (conversas com a IA **em texto**) e a recomendação final escrita.
-2. **Vídeo de até 3 minutos** no Google Drive, com o link na primeira linha do seu README.
-
-O detalhe de cada item, o prazo e o formulário de entrega estão no
-**[desafio completo](https://seazone-tech.github.io/jovens-talentos-2026-hackathon-data/)**.
+ |
 
 ---
 
-*Seazone — Jovens Talentos AI Builder 2026*
+## 💡 Veredicto sobre a Tese dos Compactos no Centro
+
+
+* **Validação Parcial de 1 Quarto:** Oferece o menor ticket de entrada (R$ 890k) e ROI de 11.2%, sendo eficiente para menor alocação de capital inicial.
+
+
+* **Superioridade dos 2 Quartos:** Entrega maior volume bruto de receita (R$ 133k/ano vs R$ 105k/ano), maior liquidez para revenda e payback similar (8.7 anos).
+
+
+* **Conclusão:** A estratégia ideal foca em **1 a 2 quartos no Centro com perfil Favorito/Rating alto**.
+
+
+
+---
+
+## 📄 Documentação Completa
+
+* Relatório Executivo Completo: [`relatorio_final.md`](https://www.google.com/search?q=./relatorio_final.md)
+* Logs de Interação com IA: Pasta [`ai-log/`](https://www.google.com/search?q=./ai-log/)
+
+```
+
+---
+
