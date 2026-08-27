@@ -1,4 +1,4 @@
-# Link de Apresentação em Video: https://drive.google.com/drive/folders/10rJBeOG28ibviL0683YEJ40zDAaFH0kB?usp=drive_link
+# Link de Apresentação em Video: https://drive.google.com/drive/folders/10rJBeOG28ibviL0683YEJ40zDAaFH0kB?usp=sharing
 # Hackathon Jovens Talentos AI Builder 2026 — Seazone
 
 # Seazone - Desafio IA Builder 2026
