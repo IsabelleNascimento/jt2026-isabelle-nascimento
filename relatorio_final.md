@@ -1,3 +1,5 @@
+# Link de Apresentação em Video: https://drive.google.com/drive/folders/10rJBeOG28ibviL0683YEJ40zDAaFH0kB?usp=drive_link 
+
 # Relatório Final - Análise de Investimento em Itapema/SC
 
 **Hackathon JT 2026 - Seazone**
@@ -25,9 +27,9 @@ distorção por outliers, e filtro estatístico P1-P99.
 | Pergunta | Resposta |
 |----------|----------|
 | Melhor perfil? | Apartamento, 2 quartos, 1-2 banheiros |
-| Melhor localização? | Tabuleiro dos Oliveiras (ROI 17%), Morretes (14%) |
-| Características-chave? | Superhost (-12% receita), Guest favorite (rating 4.96) |
-| O que comprar? | Apartamento 1-2q em Tabuleiro dos Oliveiras ou Centro |
+| Melhor localização? | Centro (ROI 10%, n=193) ou Morretes (ROI 14%, n=74) |
+| Características-chave? | Guest favorite (rating 4.96), localização (Centro/Morretes), pet friendly (+43% reviews) |
+| O que comprar? | Apartamento 1-2q em Centro (prioritário) ou Morretes |
 
 ---
 
@@ -226,38 +228,58 @@ como indicativas, não como forecast preciso.
 
 ## 6. Qual imóvel a Seazone deveria comprar hoje?
 
-### 6.1 Cenário A: Máximo ROI (Perfil Conservador)
-
-| Critério | Especificação |
-|-----------|---------------|
-| Tipo | Apartamento |
-| Quartos | 1-2 quartos |
-| Banheiros | 1 banheiro |
-| Bairro | Tabuleiro dos Oliveiras ou Morretes |
-| Preço alvo | R$ 600k - R$ 900k |
-| ROI esperado | 14-17% |
-| Payback | 7-7 anos |
-| Animais | Permitir |
-
-**Justificativa:** ROI maximizado, entrada mais baixa, payback mais curto.
-Risco menor por menor capital em jogo.
-
-### 6.2 Cenário B: Melhor Equilíbrio (Perfil Recomendado)
+### 6.1 Cenário Principal: Centro (Perfil Recomendado)
 
 | Critério | Especificação |
 |-----------|---------------|
 | Tipo | Apartamento |
 | Quartos | 2 quartos |
 | Banheiros | 1-2 banheiros |
-| Bairro | Centro ou Morretes |
+| Bairro | Centro |
 | Preço alvo | R$ 900k - R$ 1.2M |
-| ROI esperado | 10-14% |
-| Payback | 10-7 anos |
+| ROI esperado | 10% |
+| Payback | 10 anos |
 | Animais | Permitir |
 | Superhost | Buscar imóveis geridos por superhosts |
 
-**Justificativa:** Maior liquidez (Centro tem mais oferta/demanda), receita superior
-às opções baratas, rating alto, e maior potencial de valorização.
+**Justificativa:** Centro tem a maior amostra disponível (n=193 imóveis),
+o que torna os dados mais estatisticamente confiáveis. ROI de 10% com payback de 10 anos,
+ampla oferta de imóveis para escolher, maior liquidez na revenda, e sazonalidade moderada (1,5x).
+Bairros com ROI aparentemente maior (Tabuleiro dos Oliveiras, Ilhota) possuem amostras muito
+pequenas (n<20), o que pode distorcer os resultados e tornar a recomendação arriscada.
+
+### 6.2 Cenário Alternativo: Morretes (Perfil Conservador)
+
+| Critério | Especificação |
+|-----------|---------------|
+| Tipo | Apartamento |
+| Quartos | 1-2 quartos |
+| Banheiros | 1-2 banheiros |
+| Bairro | Morretes |
+| Preço alvo | R$ 600k - R$ 1M |
+| ROI esperado | 14% |
+| Payback | 7 anos |
+| Animais | Permitir |
+
+**Justificativa:** Segunda opção com amostra razoável (n=74), ROI superior ao Centro (14%)
+e a menor sazonalidade entre os bairros relevantes (1,3x). Entry point mais baixo (R$ 600k-1M),
+payback mais curto, adequado para investidores que buscam retorno mais rápido com menor capital.
+
+### 6.3 Cenário Agressivo: Tabuleiro dos Oliveiras
+
+| Critério | Especificação |
+|-----------|---------------|
+| Tipo | Apartamento |
+| Quartos | 2 quartos |
+| Banheiros | 1-2 banheiros |
+| Bairro | Tabuleiro dos Oliveiras |
+| ROI esperado | 17% |
+| Payback | ~6 anos |
+| Animais | Permitir |
+
+**Atenção:** ROI mais alto (17%) mas amostra pequena (n=16).
+Resultados podem não ser reproduzíveis. Indicado apenas para investidores dispostos
+a aceitar maior incerteza estatística em troca de potencial de retorno superior.
 
 ### 6.3 Cenário C: Máxima Receita (Perfil Agressivo)
 
@@ -282,12 +304,12 @@ payback mais longo. Indicado para investidores com mais capital disponível.
 
 ### 6.4 Justificativa Final
 
-**Recomendação principal: Cenário B** (Apartamento 2q, Centro/Morretes)
+**Recomendação principal: Cenário Principal** (Apartamento 2q, Centro)
 
-1. **ROI competitivo** (~10%) sem exigir entrada muito baixa
+1. **ROI competitivo** (~10%) com a maior amostra disponível (n=193)
 2. **Maior liquidez** — Centro é o bairro com mais oferta, facilita revenda
 3. **Receita sólida** — R$ 110k/ano (2q) vs R$ 100k/ano (1q)
-4. **Payback gerenciável** — 9.6 anos
+4. **Payback gerenciável** — 10 anos
 5. **Perfil mais procurado** — 2 quartos atende casais e famílias pequenas
 6. **Potencial de superhost** — 28% dos 2q já são superhosts no Centro
 
@@ -367,10 +389,10 @@ na região **Centro** seriam apostas mais eficientes. Esta seção valida essa h
 
 | Perfil | Bairro | ROI | Payback | Receita | Investimento | Risco |
 |--------|--------|-----|---------|---------|--------------|-------|
-| **A: Conservador** | Tab. Oliveiras/Morretes | 17-14% | 6-7a | R$ 113-150k | R$ 600k-900k | Baixo |
-| **B: Equilibrado (Recomendado)** | Centro/Morretes | 10-14% | 10-7a | R$ 136k | R$ 900k-1.2M | Médio |
-| **C: Agressivo** | Morretes/Centro | 19-8% | 5-12a | R$ 149-175k | R$ 1-2.5M | Médio-Alto |
-| **D: Centro Compacto** | Centro | 11-11% | 9-9a | R$ 105k | R$ 0.9M | Baixo-Médio |
+| **Principal (Recomendado)** | Centro | 10% | 10a | R$ 136k | R$ 900k-1.2M | Baixo |
+| **Alternativo** | Morretes | 14% | 7a | R$ 113k | R$ 600k-1M | Baixo-Médio |
+| **Agressivo** | Tab. Oliveiras | 17% | 6a | R$ 150k | R$ 600k-900k | Médio |
+| **Máxima Receita** | Morretes/Centro 3q | 19-8% | 5-12a | R$ 149-175k | R$ 1-2.5M | Médio-Alto |
 
 ---
 
@@ -380,24 +402,28 @@ na região **Centro** seriam apostas mais eficientes. Esta seção valida essa h
    apartamentos (artefato estatístico de dados duplicados). Sem a limpeza, a
    decisão seria errada.
 
-2. **O bairro é o fator #1:** Tabuleiro dos Oliveiras tem ROI de 17% — maior entre
-   bairros com dados confiáveis. A escolha do bairro impacta mais que qualquer outra variável.
+2. **Amostra importa tanto quanto ROI:** Tabuleiro dos Oliveiras tem ROI de 17% mas apenas 16 imóveis.
+   Centro tem ROI de 10% com 193 imóveis — resultado mais confiável.
+   Bairros com n<20 devem ser tratados como indicativos, não como garantia.
 
-3. **Superhost merece atenção:** Nesta amostra, superhosts cobram -12% por noite e
-   faturam -12% ao ano, mas acumulam +117% mais reviews.
-   O preço menor pode refletir composição da amostra (imóveis menores/menos valorizados).
-   Seazone deveria investigar se o status de superhost é determinante ou se o efeito é de
-   bairro/tamanho. Ação recomendada: buscar imóveis com histórico de superhost como
-   sinal de gestão eficiente, não como garantia de retorno financeiro superior.
+3. **Superhost: sinal de gestão, não de preço alto:** Superhosts nesta amostra cobram -12%
+   por noite e faturam -12% ao ano, mas acumulam +117% mais reviews.
+   O padrão sugere que superhosts priorizam volume e ocupação a preços altos,
+   o que é coerente com gestão profissional de curta duração. Não é possível afirmar
+   que ser superhost causa retorno financeiro superior — apenas que o status está
+   associado a maior visibilidade (reviews) e prática de gestão ativa.
+   Para Seazone:Buscar imóveis com histórico de superhost como proxy de gestão eficiente,
+   mas não pagar prêmio por esse status sem controlar por bairro e tamanho.
 
-4. **Centro é competitivo para 1-2q:** A hipótese interna está parcialmente
-   correta. O diferencial está em combinar 1-2 quartos com perfil de favorito.
+4. **Centro é a aposta mais segura:** ROI competitivo (10%), maior amostra (n=193)
+   e sazonalidade moderada (1,5x). Morretes complementa com ROI maior (14%) e
+   sazonalidade menor (1,3x), sendo a segunda opção recomendada.
 
 5. **Animais = demanda:** Permitir pets não aumenta preço mas gera 43% mais
    reviews. É uma alavancagem de demanda sem custo.
 
-6. **Payback realista:** Mesmo no melhor cenário, payback é de 7+ anos.
-   Investimento de longo prazo, não especulativo.
+6. **Payback realista:** No Centro, payback é de ~10 anos.
+   Em Morretes, ~7 anos. Investimento de longo prazo, não especulativo.
 
 ---
 
