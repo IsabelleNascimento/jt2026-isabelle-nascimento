@@ -1,5 +1,3 @@
-# Link de Apresentação em Video: https://drive.google.com/drive/folders/10rJBeOG28ibviL0683YEJ40zDAaFH0kB?usp=drive_link 
-
 # Relatório Final - Análise de Investimento em Itapema/SC
 
 **Hackathon JT 2026 - Seazone**
